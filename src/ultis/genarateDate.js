@@ -7,12 +7,13 @@ const formatDate = (timeObj) => {
 }
 
 const genarateDate = () => {
-    let gapExprire = Math.floor(Math.random() * 29) + 1
-    let today = new Date()
-    let expireDay = moment(today).add(gapExprire, 'd').toDate()
+    const today = new Date();
+    const expireDay = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
+
     return {
         today: formatDate(today),
         expireDay: formatDate(expireDay)
-    }
-}
-export default genarateDate
+    };
+};
+
+export default genarateDate;
